@@ -1,27 +1,19 @@
-import { View, Text, StyleSheet } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
+import WordleScreen from '../../components/WordleScreen';
+import { View, Text } from 'react-native';
 
 export default function GameScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id } = useLocalSearchParams();
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>{id}</Text>
-      <Text>Game implementation goes here.</Text>
-    </View>
-  );
+  switch (id) {
+    case 'wordle':
+      return <WordleScreen />;
+
+    default:
+      return (
+        <View>
+          <Text>Game not found</Text>
+        </View>
+      );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  heading: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 15,
-  },
-});

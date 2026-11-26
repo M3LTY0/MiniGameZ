@@ -43,15 +43,18 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
   },
+
   row: {
     justifyContent: 'space-between',
     marginBottom: 15,
   },
+
   gameBox: {
     flex: 1,
     height: 140,
@@ -61,6 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   gameName: {
     fontSize: 16,
     fontWeight: '600',
